@@ -1,0 +1,45 @@
+dn: dc=solacesystems,dc=com
+objectclass: top
+objectclass: domain
+objectclass: extensibleObject
+dc: solacesystems
+
+dn: ou=solace-cli-users,dc=solacesystems,dc=com
+ou: solace-cli-users
+description: Solace CLI Users
+objectClass: organizationalUnit
+
+dn: cn=test-cli-user1, ou=solace-cli-users, dc=solacesystems, dc=com
+objectClass: person
+cn: test-cli-user1
+sn: test-cli-user1
+userPassword: test-cli-password1
+
+dn: cn=test-cli-user2, ou=solace-cli-users, dc=solacesystems, dc=com
+objectClass: person
+cn: test-cli-user2
+sn: test-cli-user2
+userPassword: test-cli-password2
+
+dn: cn=test-cli-user3, ou=solace-cli-users, dc=solacesystems, dc=com
+objectClass: person
+cn: test-cli-user3
+sn: test-cli-user3
+userPassword: test-cli-password3
+
+dn: ou=solace-cli-groups, dc=solacesystems, dc=com
+ou: solace-cli-groups
+description: Solace CLI Groups
+objectClass: organizationalUnit
+
+dn: cn=cli-group-admin, ou=solace-cli-groups, dc=solacesystems, dc=com
+cn: cli-group-admin
+description: CLI admin group
+objectClass: groupOfNames
+member: cn=test-cli-user1, ou=solace-cli-users, dc=solacesystems, dc=com
+
+dn: cn=cli-group-read-only, ou=solace-cli-groups, dc=solacesystems, dc=com
+cn: cli-group-read-only
+description: CLI read-only group
+objectClass: groupOfNames
+member: cn=test-cli-user2, ou=solace-cli-users, dc=solacesystems, dc=com
